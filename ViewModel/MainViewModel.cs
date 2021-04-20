@@ -20,26 +20,18 @@ namespace TimerTestApp.ViewModel
     {
         private readonly IEventAggregator _eventAggregator;
         private IIndex<string, ITabViewModel> _detailViewModelCreator;
-        private readonly IMessageDialogService _messageDialogService;
         public MainViewModel(
             IEventAggregator eventAggregator,
-            IIndex<string, ITabViewModel> detailViewModelCreator, 
-            IMessageDialogService messageDialogService)
+            IIndex<string, ITabViewModel> detailViewModelCreator)
         {
             _eventAggregator = eventAggregator;
             _detailViewModelCreator = detailViewModelCreator;
-            _messageDialogService = messageDialogService;
 
-            CreateNewTabCommand = new DelegateCommand<Type>(CreateNewTabExecute);
+            CreateNewTabCommand = new DelegateCommand<Type>(CreateNewTabExecute,CreateNewTabCanExecute);
             
             _eventAggregator.GetEvent<TabViewClosedEvent>().Subscribe(AfterDetailClosed);
 
-            InitSetting();
-        }
-
-        private void InitSetting()
-        {
-            
+          
         }
 
         private ObservableCollection<ITabViewModel> _tabViewModels;
@@ -68,21 +60,34 @@ namespace TimerTestApp.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        #region CreateNewTabCommand
         public ICommand CreateNewTabCommand { get; }
 
         private int nextNewItemId = 1;
         private void CreateNewTabExecute(Type viewModelType)
         {
-            if (TabViewModels.Count<10)
-            {
+            //if (TabViewModels.Count<10)
+            //{
                 OpenTabView(
               new OpenTabViewEventArgs
               {
                   Id = nextNewItemId++,
                   ViewModelName = viewModelType.Name
               });
-            }
+            //}
         }
+        public bool CreateNewTabCanExecute(Type type)
+        {
+            if (TabViewModels.Count < 10)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        #endregion
+
         private  void OpenTabView(OpenTabViewEventArgs args)
         {
             

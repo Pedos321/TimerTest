@@ -90,9 +90,7 @@
     <Compile Include="Model\TabItem.cs" />
     <Compile Include="Model\Timer.cs" />
     <Compile Include="Model\TimerModelEventArgs.cs" />
-    <Compile Include="Services\IMessageDialogService.cs" />
     <Compile Include="Services\ITimerFactory.cs" />
-    <Compile Include="Services\MessageDialogService.cs" />
     <Compile Include="Startup\Bootstrapper.cs" />
     <Compile Include="TemplateSelector.cs" />
     <Compile Include="ViewModel\ITabViewModel.cs" />

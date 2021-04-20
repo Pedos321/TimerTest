@@ -16,8 +16,7 @@ namespace TimerTestApp.ViewModel
     {  
         private readonly ITimerFactory _timerFactory;
         private readonly ITimer _timer;
-        public TabItemViewModel(IEventAggregator eventAggregator, ITimerFactory timerFactory,
-            IMessageDialogService messageDialogService) : base(eventAggregator, messageDialogService)
+        public TabItemViewModel(IEventAggregator eventAggregator, ITimerFactory timerFactory) : base(eventAggregator)
         {
             _timerFactory = timerFactory;
             _timer = timerFactory.CreateTimer();
