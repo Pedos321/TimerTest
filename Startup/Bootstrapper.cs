@@ -23,8 +23,6 @@ namespace TimerTestApp.Startup
 
             builder.RegisterType<MainViewModel>().AsSelf();
 
-            builder.RegisterType<MessageDialogService>().As<IMessageDialogService>();
-
             builder.RegisterType<TimerFactory>().As<ITimerFactory>();
 
             builder.RegisterType<TabItemViewModel>()

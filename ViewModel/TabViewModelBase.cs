@@ -15,12 +15,10 @@ namespace TimerTestApp.ViewModel
     {
 
         private readonly IEventAggregator EventAggregator;
-        protected readonly IMessageDialogService MessageDialogService;
 
-        public TabViewModelBase(IEventAggregator eventAggregator, IMessageDialogService messageDialogService)
+        public TabViewModelBase(IEventAggregator eventAggregator)
         {
             EventAggregator = eventAggregator;
-            MessageDialogService = messageDialogService;
             CloseTabViewCommand = new DelegateCommand(OnCloseTabViewExecute, OnCloseTabViewCanExecute);
             IsEnable = true;
         }
