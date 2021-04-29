@@ -79,7 +79,14 @@ namespace TimerTestApp.ViewModel
         }
         private void OnStartStop()
         {
-            if (_timer.Status==TimerStatus.Default)
+            if (_timer.Status == TimerStatus.Default)
+            {
+                IsRunning = true;
+                IsPaused = false;
+                _timer.Start();
+                base.IsEnable = false;
+            }
+            else if (_timer.Status == TimerStatus.IsPaused)
             {
                 IsRunning = true;
                 IsPaused = false;

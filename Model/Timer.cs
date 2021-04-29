@@ -9,7 +9,7 @@ namespace TimerTestApp.Model
 {
     public class Timer : ITimer
     {
-        private readonly DispatcherTimer internalTimer = new DispatcherTimer();
+        private readonly DispatcherTimer internalTimer = new DispatcherTimer(DispatcherPriority.Render);
 
         public event EventHandler<TimerModelEventArgs> Tick;
         public event EventHandler<TimerModelEventArgs> Started;
