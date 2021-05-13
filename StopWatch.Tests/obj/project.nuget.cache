@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "X95mEn9o5HMMVezjVlUx/YeMCLklOWdUD+HnskHp18AGmnPF66jAEYPBFbl+BXiBnCPpa3rZdHbbNcYJwaKF1A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Andrew\\Desktop\\TimerTestApp\\StopWatch.Tests\\StopWatch.Tests.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Andrew\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
+    "C:\\Users\\Andrew\\.nuget\\packages\\microsoft.net.test.sdk\\16.5.0\\microsoft.net.test.sdk.16.5.0.nupkg.sha512",
+    "C:\\Users\\Andrew\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Users\\Andrew\\.nuget\\packages\\nunit3testadapter\\3.16.1\\nunit3testadapter.3.16.1.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,5 @@
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch\obj\Debug\StopWatch.csprojAssemblyReference.cache
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch\obj\Debug\View\MyStopWatch.g.cs
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch\obj\Debug\App.g.cs
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch\obj\Debug\StopWatch_MarkupCompile.cache
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch\obj\Debug\StopWatch_MarkupCompile.lref

@@ -1,0 +1,15 @@
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\bin\Debug\net48\NUnit3.TestAdapter.dll
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\bin\Debug\net48\NUnit3.TestAdapter.pdb
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\bin\Debug\net48\nunit.engine.dll
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\bin\Debug\net48\nunit.engine.api.dll
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\bin\Debug\net48\StopWatch.Tests.dll
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\bin\Debug\net48\StopWatch.Tests.pdb
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\bin\Debug\net48\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\bin\Debug\net48\nunit.framework.dll
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\obj\Debug\net48\StopWatch.Tests.csprojAssemblyReference.cache
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\obj\Debug\net48\StopWatch.Tests.AssemblyInfoInputs.cache
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\obj\Debug\net48\StopWatch.Tests.AssemblyInfo.cs
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\obj\Debug\net48\StopWatch.Tests.csproj.CoreCompileInputs.cache
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\obj\Debug\net48\StopWatch.Tests.csproj.CopyComplete
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\obj\Debug\net48\StopWatch.Tests.dll
+C:\Users\Andrew\Desktop\TimerTestApp\StopWatch.Tests\obj\Debug\net48\StopWatch.Tests.pdb
