@@ -81,7 +81,7 @@
     <Compile Include="TabItemViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TimerTest\TimerTestApp.csproj">
+    <ProjectReference Include="..\TimerTestApp.csproj">
       <Project>{ec548b13-b3b1-4db9-b0c4-21a33d4c1652}</Project>
       <Name>TimerTestApp</Name>
     </ProjectReference>

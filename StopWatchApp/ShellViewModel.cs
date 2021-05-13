@@ -8,5 +8,9 @@ namespace StopWatchApp
 {
     public class ShellViewModel
     {
+        public ShellViewModel()
+        {
+            
+        }
     }
 }

@@ -33,10 +33,10 @@ namespace StopWatchApp
 
         }
 
-        protected override void InitializeShell(System.Windows.Window shell)
-        {
-            shell.Show();
-        }
+        //protected override void InitializeShell(System.Windows.Window shell)
+        //{
+        //    shell.Show();
+        //}
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {

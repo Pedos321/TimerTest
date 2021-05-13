@@ -1,20 +1,20 @@
 ﻿StopWatchTestWork.StopWatch.Module
 
 
-winexe
+library
 C#
 .cs
-C:\Users\Andrew\Desktop\TimerTestApp\StopWatch\obj\Debug\
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\StopWatch\obj\Debug\
 TestWork.StopWatch.Module
 none
 false
 DEBUG;TRACE
-C:\Users\Andrew\Desktop\TimerTestApp\StopWatch\App.xaml
+
 1-874991149
 
-10-927766669
-125-1557664193
+91370812348
+125-257199981
 View\StopWatchView.xaml;
 
-True
+False
 
