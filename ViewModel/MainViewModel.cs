@@ -1,6 +1,4 @@
 ﻿using Autofac.Features.Indexed;
-using Prism.Commands;
-using Prism.Events;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,28 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows.Input;
-using TimerTestApp.Events;
+using TimerTestApp.Commands;
 using TimerTestApp.Model;
-using TimerTestApp.Services;
+
 
 namespace TimerTestApp.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        private readonly IEventAggregator _eventAggregator;
+      
         private IIndex<string, ITabViewModel> _detailViewModelCreator;
         public MainViewModel(
-            IEventAggregator eventAggregator,
             IIndex<string, ITabViewModel> detailViewModelCreator)
         {
-            _eventAggregator = eventAggregator;
+           
             _detailViewModelCreator = detailViewModelCreator;
 
-            CreateNewTabCommand = new DelegateCommand<Type>(CreateNewTabExecute,CreateNewTabCanExecute);
+            CreateNewTabCommand = new RelayCommand<Type>(CreateNewTabExecute,CreateNewTabCanExecute);
             
-            _eventAggregator.GetEvent<TabViewClosedEvent>().Subscribe(AfterDetailClosed);
-
-          
         }
 
         private ObservableCollection<ITabViewModel> _tabViewModels;
@@ -111,11 +105,11 @@ namespace TimerTestApp.ViewModel
             SelectedTabViewModel = TabViewModels.Count - 1;
         }
 
-        private void AfterDetailClosed(TabViewClosedEventArgs args)
+        private void AfterDetailClosed()
         {
             if (TabViewModels.Count > 1)
             {
-                RemoveDetailViewModel(args.Id, args.ViewModelName);
+                //RemoveDetailViewModel(args.Id, args.ViewModelName);
             }
            
         }

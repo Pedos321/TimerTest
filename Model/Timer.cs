@@ -18,10 +18,11 @@ namespace TimerTestApp.Model
 
         public Timer()
         {
-            internalTimer.Interval = TimeSpan.FromSeconds(1);
-            DefaultTimeValue = new TimeSpan(0, 0, 0);
+            // internalTimer.Interval = TimeSpan.FromSeconds(1);
+            internalTimer.Interval = TimeSpan.FromMilliseconds(1);
             CreatedTime = DateTime.Now;
             Name = "Секундомер";
+            Count = 0;
             Status = TimerStatus.Default;
             internalTimer.Tick += (sender, e) => OnDispatcherTimerTick();
         }
@@ -31,6 +32,9 @@ namespace TimerTestApp.Model
             get => internalTimer.IsEnabled;
             set => internalTimer.IsEnabled = value;
         }
+
+
+        public int Count { get; set; }
         public TimeSpan Interval
         {
             get => internalTimer.Interval;
@@ -62,6 +66,7 @@ namespace TimerTestApp.Model
         private void OnDispatcherTimerTick()
         {
             Duration = Duration + Interval;
+            this.Count++;
             OnTick();
         }
         private void OnTick()

@@ -17,6 +17,8 @@ namespace TimerTestApp.Model
 
         string Name { get; set; }
 
+        int Count { get; set; }
+
         void Start();
         void Stop();
         void Reset();

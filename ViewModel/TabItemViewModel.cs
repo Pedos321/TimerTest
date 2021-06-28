@@ -1,5 +1,4 @@
-﻿using Prism.Commands;
-using Prism.Events;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,26 +6,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
+using TimerTestApp.Commands;
 using TimerTestApp.Model;
-using TimerTestApp.Services;
 
 namespace TimerTestApp.ViewModel
 {
-    public class TabItemViewModel : TabViewModelBase, ITabViewModel
+    public class TabItemViewModel : ViewModelBase, ITabViewModel
     {  
-        private readonly ITimerFactory _timerFactory;
+      
         private readonly ITimer _timer;
-        public TabItemViewModel(IEventAggregator eventAggregator, ITimerFactory timerFactory) : base(eventAggregator)
+        public TabItemViewModel() 
         {
-            _timerFactory = timerFactory;
-            _timer = timerFactory.CreateTimer();
 
+            StartStopCommand = new RelayCommand<>(OnStartStop, CanStartStop);
+            ResetCommand = new RelayCommand<>(OnReset, CanReset);
             UpdateTimerValues();
             AddEventHandlers();
-           
-            StartStopCommand = new DelegateCommand(OnStartStop, CanStartStop);
-            ResetCommand = new DelegateCommand(OnReset, CanReset);
         }
+
+        public int Id => throw new NotImplementedException();
+
+        public bool IsEnable => throw new NotImplementedException();
 
         private bool _IsRunning;
         public bool IsRunning
@@ -36,9 +36,11 @@ namespace TimerTestApp.ViewModel
             {
                 _IsRunning = value;
                 OnPropertyChanged();
-                ((DelegateCommand)ResetCommand).RaiseCanExecuteChanged();
             }
         }
+
+        public int Count;
+        public string Title;
 
         private bool _IsPaused;
         public bool IsPaused
@@ -48,7 +50,6 @@ namespace TimerTestApp.ViewModel
             {
                 _IsPaused = value;
                 OnPropertyChanged();
-                ((DelegateCommand)ResetCommand).RaiseCanExecuteChanged();
             }
         }
 
@@ -71,40 +72,50 @@ namespace TimerTestApp.ViewModel
         }
 
         #region StartStopCommand
-        public ICommand StartStopCommand { get; }
+
+        private ICommand startStopCommand;
+        public ICommand StartStopCommand
+        {
+            get { return startStopCommand; }
+            set { startStopCommand = value; }
+        }
         private bool CanStartStop()
         {
             return true;
         }
-        private void OnStartStop()
+        public void OnStartStop()
         {
             if (_timer.Status == TimerStatus.Default)
             {
                 IsRunning = true;
                 IsPaused = false;
                 _timer.Start();
-                base.IsEnable = false;
             }
             else if (_timer.Status == TimerStatus.IsPaused)
             {
                 IsRunning = true;
                 IsPaused = false;
                 _timer.Start();
-                base.IsEnable = false;
             }
             else
             {
                 IsRunning = false;
                 IsPaused = true;
                 _timer.Stop();
-                base.IsEnable = true;
             }
         }
 
         #endregion
 
         #region ResetCommand
-        public ICommand ResetCommand { get; }
+
+        private ICommand resetCommand;
+        public ICommand ResetCommand
+        {
+            get{ return resetCommand; }
+            set{ resetCommand = value; }
+        }
+
 
         private void OnReset()
         {
@@ -129,7 +140,7 @@ namespace TimerTestApp.ViewModel
             TimerValue = string.Format("{0}:{1}:{2}", t.Hours.ToString("D2"),
                 t.Minutes.ToString("D2"), t.Seconds.ToString("D2"));
         }
-        public override void Load(int tabItemId)
+        public  void Load(int tabItemId)
         {
             var tabitem = CreateTabItem();
 
@@ -153,26 +164,10 @@ namespace TimerTestApp.ViewModel
         }
         private void AddEventHandlers()
         {
-            _timer.Tick += (sender, e) => OnTick(sender, e);
-            _timer.Started += (sender, e) => OnStarted(sender, e);
-            _timer.Stopped += (sender, e) => OnStopped(sender, e);
-            _timer.TimerReset += (sender, e) => OnReset(sender, e);
-        }
-        private void OnReset(object sender, TimerModelEventArgs e)
-        {
-            UpdateTimer(e);
-        }
-        private void OnStopped(object sender, TimerModelEventArgs e)
-        {
-            UpdateTimer(e);
-        }
-        private void OnStarted(object sender, TimerModelEventArgs e)
-        {
-            UpdateTimer(e);
-        }
-        private void OnTick(object sender, TimerModelEventArgs e)
-        {
-            UpdateTimer(e);
+            _timer.Tick += (sender, e) => UpdateTimer(e);
+            _timer.Started += (sender, e) => UpdateTimer(e);
+            _timer.Stopped += (sender, e) => UpdateTimer(e);
+            _timer.TimerReset += (sender, e) => UpdateTimer(e);
         }
     }
 }
