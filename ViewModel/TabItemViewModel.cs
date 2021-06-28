@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Input;
 using TimerTestApp.Commands;
 using TimerTestApp.Model;
@@ -18,8 +17,8 @@ namespace TimerTestApp.ViewModel
         public TabItemViewModel() 
         {
 
-            StartStopCommand = new RelayCommand<>(OnStartStop, CanStartStop);
-            ResetCommand = new RelayCommand<>(OnReset, CanReset);
+            StartStopCommand = new RelayCommand(param => OnStartStop(), param=>CanStartStop());
+            ResetCommand = new RelayCommand(param=>OnReset(), param=>CanReset());
             UpdateTimerValues();
             AddEventHandlers();
         }
@@ -83,6 +82,8 @@ namespace TimerTestApp.ViewModel
         {
             return true;
         }
+
+
         public void OnStartStop()
         {
             if (_timer.Status == TimerStatus.Default)
@@ -144,7 +145,7 @@ namespace TimerTestApp.ViewModel
         {
             var tabitem = CreateTabItem();
 
-            Id = tabItemId;
+            //Id = tabItemId;
 
             tabitem.Id = tabItemId;
             InitTabItem(tabitem);
