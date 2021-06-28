@@ -36,3 +36,5 @@ C:\Users\Andrew\Desktop\TimerTestApp\TimerTestApp.Tests\obj\Debug\TimerTestApp.T
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTestApp.Tests\obj\Debug\TimerTestApp.Tests.csproj.CopyComplete
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTestApp.Tests\obj\Debug\TimerTestApp.Tests.dll
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTestApp.Tests\obj\Debug\TimerTestApp.Tests.pdb
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\TimerTestApp.Tests\obj\Debug\TimerTestApp.Tests.dll
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\TimerTestApp.Tests\obj\Debug\TimerTestApp.Tests.pdb

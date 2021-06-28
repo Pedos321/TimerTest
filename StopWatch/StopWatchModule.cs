@@ -14,25 +14,35 @@ namespace TestWork.StopWatch.Module
 {
     public class StopWatchModule : IModule 
     {
-        private readonly IUnityContainer _container;
-        private readonly IRegionManager _regionManager;
+        //private readonly IUnityContainer _container;
+        //private readonly IRegionManager _regionManager;
 
 
-        public StopWatchModule(IUnityContainer container, IRegionManager regionManager)
-        {
-            _container = container;
-            _regionManager = regionManager;
-        }
+        //public StopWatchModule(IUnityContainer container, IRegionManager regionManager)
+        //{
+        //    _container = container;
+        //    _regionManager = regionManager;
+        //}
 
+        //public void OnInitialized(IContainerProvider containerProvider)
+        //{
+        //    _container.RegisterType<StopWatchViewModel, StopWatchViewModel>();
+        //    _regionManager.RegisterViewWithRegion("MainRegion", typeof(StopWatchView));
+        //}
+
+        //public void RegisterTypes(IContainerRegistry containerRegistry)
+        //{
+
+        //}
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _container.RegisterType<StopWatchViewModel, StopWatchViewModel>();
-            _regionManager.RegisterViewWithRegion("MainRegion", typeof(StopWatchView));
+            var regionManager = containerProvider.Resolve<IRegionManager>();
+            regionManager.RegisterViewWithRegion("MainRegion", typeof(StopWatchView));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            
+
         }
 
     }
