@@ -93,7 +93,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Model\CustomTimer.cs" />
+    <Compile Include="Model\IPrimitiveTimer.cs" />
     <Compile Include="Model\ITimer.cs" />
+    <Compile Include="Model\MyTimer.cs" />
+    <Compile Include="Model\StopWatch.cs" />
     <Compile Include="Model\TabItem.cs" />
     <Compile Include="Model\Timer.cs" />
     <Compile Include="Model\TimerModelEventArgs.cs" />
