@@ -4,8 +4,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-       
-        xmlns:local="clr-namespace:TimerTestApp."
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:TimerTestApp"
         xmlns:view="clr-namespace:TimerTestApp.View"
         xmlns:viewmodel="clr-namespace:TimerTestApp.ViewModel" 
         xmlns:i1="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
@@ -52,12 +52,12 @@
         SelectedIndex="{Binding SelectedTabViewModel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
         ItemTemplateSelector="{StaticResource headerTemplateSelector}"
         ContentTemplateSelector="{StaticResource contentTemplateSelector}">
-            <!--<i:Interaction.Triggers>
-                <i1:EventTrigger EventName="Loaded">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Loaded">
                     <i:InvokeCommandAction 
-               Command="{Binding ElementName=root, Path=DataContext.CreateNewTabCommand}"  CommandParameter="{x:Type viewmodel:TabItemViewModel}"/>
-                </i1:EventTrigger>
-            </i:Interaction.Triggers>-->
+                        Command="{Binding ElementName=root, Path=DataContext.CreateNewTabCommand}"  CommandParameter="{x:Type viewmodel:TabItemViewModel}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </TabControl>
     </Grid>
 </Window>

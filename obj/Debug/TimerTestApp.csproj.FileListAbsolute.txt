@@ -115,12 +115,24 @@ C:\Users\Andrew\Desktop\TimerTestApp\obj\Debug\TimerTestApp.csproj.GenerateResou
 C:\Users\Andrew\Desktop\TimerTestApp\obj\Debug\TimerTestApp.csproj.CoreCompileInputs.cache
 C:\Users\Andrew\Desktop\TimerTestApp\obj\Debug\TimerTestApp.csproj.CopyComplete
 C:\Users\Andrew\Desktop\TimerTestApp\obj\Debug\TimerTestApp.csprojAssemblyReference.cache
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\TimerTestApp.csprojAssemblyReference.cache
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\View\TimerView.g.cs
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\App.g.cs
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\TimerTestApp_MarkupCompile.cache
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\TimerTestApp_MarkupCompile.lref
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\MainWindow.g.cs
+C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\MainWindow.g.cs
+C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\View\TimerView.g.cs
+C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\App.g.cs
+C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp_MarkupCompile.cache
+C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp_MarkupCompile.lref
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\TimerTestApp.exe.config
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\TimerTestApp.exe
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\TimerTestApp.pdb
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\Autofac.dll
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\Prism.dll
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Buffers.dll
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Memory.dll
@@ -130,20 +142,12 @@ C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Threading.Tasks.
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\Autofac.pdb
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\Autofac.xml
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\Prism.pdb
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\Prism.xml
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Buffers.xml
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Memory.xml
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\MainWindow.g.cs
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\View\TimerView.g.cs
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\App.g.cs
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp_MarkupCompile.cache
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp_MarkupCompile.lref
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\MainWindow.baml
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\View\TimerView.baml
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp.g.resources
@@ -153,22 +157,7 @@ C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp.csproj.Cor
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp.csproj.CopyComplete
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp.exe
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp.pdb
+C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\Microsoft.Expression.Interactions.dll
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\de\System.Windows.Interactivity.resources.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\en\System.Windows.Interactivity.resources.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\es\System.Windows.Interactivity.resources.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\fr\System.Windows.Interactivity.resources.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\it\System.Windows.Interactivity.resources.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\ja\System.Windows.Interactivity.resources.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\ko\System.Windows.Interactivity.resources.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\ru\System.Windows.Interactivity.resources.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\zh-Hans\System.Windows.Interactivity.resources.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\zh-Hant\System.Windows.Interactivity.resources.dll
-C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp.csprojAssemblyReference.cache
-C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\TimerTestApp.csprojAssemblyReference.cache
-C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\View\TimerView.g.cs
-C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\App.g.cs
-C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\TimerTestApp_MarkupCompile.cache
-C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\TimerTestApp_MarkupCompile.lref
-C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\MainWindow.g.cs
+C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\bin\Debug\System.Windows.Interactivity.xml

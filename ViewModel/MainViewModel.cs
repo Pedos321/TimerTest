@@ -16,7 +16,6 @@ namespace TimerTestApp.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-      
         private IIndex<string, ITabViewModel> _detailViewModelCreator;
         public MainViewModel(
             IIndex<string, ITabViewModel> detailViewModelCreator)
@@ -56,21 +55,21 @@ namespace TimerTestApp.ViewModel
         }
 
         #region CreateNewTabCommand
-        public ICommand CreateNewTabCommand { get; }
+
+        private ICommand createNewTabCommand;
+        public ICommand CreateNewTabCommand
+        {
+            get { return createNewTabCommand; }
+            set { createNewTabCommand = value; }
+        }
 
         private int nextNewItemId = 1;
-        private void CreateNewTabExecute(Type viewModelType)
+
+        public void CreateNewTabExecute(Type type)
         {
-            //if (TabViewModels.Count<10)
-            //{
-                OpenTabView(
-              new OpenTabViewEventArgs
-              {
-                  Id = nextNewItemId++,
-                  ViewModelName = viewModelType.Name
-              });
-            //}
+            
         }
+
         public bool CreateNewTabCanExecute(Type type)
         {
             if (TabViewModels.Count < 10)
@@ -82,27 +81,27 @@ namespace TimerTestApp.ViewModel
 
         #endregion
 
-        private  void OpenTabView(OpenTabViewEventArgs args)
+        private  void OpenTabView()
         {
             
-            var detailViewModel = TabViewModels.SingleOrDefault(x => x.Id == args.Id
-            && x.GetType().Name == args.ViewModelName);
+            //var detailViewModel = TabViewModels.SingleOrDefault(x => x.Id == args.Id
+            //&& x.GetType().Name == args.ViewModelName);
 
-            if (detailViewModel == null)
-            {
-                detailViewModel = _detailViewModelCreator[args.ViewModelName];
-                try
-                {
-                    detailViewModel.Load(args.Id);
-                }
-                catch
-                {
-                    return;
-                }
-                TabViewModels.Add(detailViewModel);
-            }
+            //if (detailViewModel == null)
+            //{
+            //    detailViewModel = _detailViewModelCreator[args.ViewModelName];
+            //    try
+            //    {
+            //        detailViewModel.Load(args.Id);
+            //    }
+            //    catch
+            //    {
+            //        return;
+            //    }
+            //    TabViewModels.Add(detailViewModel);
+            //}
 
-            SelectedTabViewModel = TabViewModels.Count - 1;
+            //SelectedTabViewModel = TabViewModels.Count - 1;
         }
 
         private void AfterDetailClosed()
