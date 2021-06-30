@@ -19,8 +19,9 @@
             </DataTemplate>
 
             <DataTemplate x:Key="newTabButtonHeaderTemplate">
-                <Button Content="+" FontSize="20"
-        Command="{Binding ElementName=root, Path=DataContext.CreateNewTabCommand}"/>
+              
+                <Button 
+        Command="{Binding ElementName=root, Path=DataContext.CreateNewTabCommand}">Hello</Button>
             </DataTemplate>
 
             <DataTemplate x:Key="itemContentTemplate">
@@ -48,7 +49,7 @@
     </Window.Resources>
     <Grid>
         <TabControl
-        ItemsSource="{Binding TabViewModels}"
+            ItemsSource="{Binding TabViewModels}"
         SelectedIndex="{Binding SelectedTabViewModel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
         ItemTemplateSelector="{StaticResource headerTemplateSelector}"
         ContentTemplateSelector="{StaticResource contentTemplateSelector}">
