@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\App.xaml
-2129857272
+3666908602
 
-23-884584930
+23258577576
 129-1713674838
-MainWindow.xaml;View\TimerView.xaml;
+MainWindow.xaml;View\CustomTimerView.xaml;View\TimerView.xaml;
 
-False
+True
 

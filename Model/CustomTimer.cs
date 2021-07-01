@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TimerTestApp.Model
 {
-    public abstract class CustomTimer
+    public class CustomTimer
     {
         
         public enum TimerStates : byte {Stopped,Running,Paused };
@@ -16,11 +16,19 @@ namespace TimerTestApp.Model
         protected int _Minute = 0;
         protected int _Second = 0;
         protected int _Interval = 1000;
+        protected int _TickCount = 0;
         protected IPrimitiveTimer _Timer = null;
         protected TimerStates _State = TimerStates.Stopped;
-        
 
+        
         #region Public properties
+
+        public int TickCount
+        {
+            get { return _TickCount; }
+            set { _TickCount = value; }
+        }
+
         public int Hour
         {
             get { return _Hour; }
@@ -91,6 +99,7 @@ namespace TimerTestApp.Model
             Hour = 0;
             Minute = 0;
             Second = 0;
+            TickCount = 0;
         }
 
         public virtual void Start()
@@ -131,7 +140,7 @@ namespace TimerTestApp.Model
         public event EventHandler Elapsed;
         protected virtual void OnElapsed(EventArgs e)
         {
-            
+            TickCount++;
         }
 
 

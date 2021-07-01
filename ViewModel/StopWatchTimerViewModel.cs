@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using TimerTestApp.Model;
 
 namespace TimerTestApp.ViewModel
@@ -11,41 +12,40 @@ namespace TimerTestApp.ViewModel
     {
 
         #region Fields
+
+        private CustomTimer StopWatchTimer = new CustomTimer(0, 0, 0, 1000);
+
+        private ICommand StartCommand;
+
+        private ICommand StopCommand;
+
+        private ICommand ResetCommand;
+
         #endregion
 
         #region Properties
+
+
         #endregion
 
         #region Commands
         #endregion
 
         #region Methods
-        private StopWatchTimer _StopWatch = new StopWatchTimer();
 
-        private void Init()
-        {
-            _StopWatch.Elapsed += new
-                EventHandler(_StopWatch_Elapsed);
-
-            _StopWatch.StateChanged += new
-                EventHandler(_StopWatch_StateChanged);
-        }
         #endregion
 
         #region Events
-        private void _StopWatch_Elapsed(
-         object sender, EventArgs e)
-        {
-          
-        }
 
-        private void _StopWatch_StateChanged(object sender, EventArgs e)
-        {
-            
-        }
+
+
         #endregion
 
         #region Constructor
+        public StopWatchTimerViewModel()
+        {
+            
+        }
         #endregion
 
 

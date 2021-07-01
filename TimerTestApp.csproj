@@ -97,7 +97,6 @@
     <Compile Include="Model\IPrimitiveTimer.cs" />
     <Compile Include="Model\ITimer.cs" />
     <Compile Include="Model\MyTimer.cs" />
-    <Compile Include="Model\StopWatchTimer.cs" />
     <Compile Include="Model\TabItem.cs" />
     <Compile Include="Model\Timer.cs" />
     <Compile Include="Startup\Bootstrapper.cs" />
@@ -108,6 +107,9 @@
     <Compile Include="ViewModel\StopWatchTimerViewModel.cs" />
     <Compile Include="ViewModel\TabItemViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\CustomTimerView.xaml.cs">
+      <DependentUpon>CustomTimerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\TimerView.xaml.cs">
       <DependentUpon>TimerView.xaml</DependentUpon>
     </Compile>
@@ -123,6 +125,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\CustomTimerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\TimerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
