@@ -48,7 +48,7 @@
         </ResourceDictionary>
     </Window.Resources>
     <Grid>
-        <TabControl
+        <!--<TabControl
             ItemsSource="{Binding TabViewModels}"
         SelectedIndex="{Binding SelectedTabViewModel, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
         ItemTemplateSelector="{StaticResource headerTemplateSelector}"
@@ -59,6 +59,7 @@
                         Command="{Binding ElementName=root, Path=DataContext.CreateNewTabCommand}"  CommandParameter="{x:Type viewmodel:TabItemViewModel}"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
-        </TabControl>
+        </TabControl>-->
+        <view:CustomTimerView/>
     </Grid>
 </Window>

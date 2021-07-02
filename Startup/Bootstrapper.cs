@@ -18,8 +18,10 @@ namespace TimerTestApp.Startup
 
             builder.RegisterType<MainViewModel>().AsSelf();
 
-            builder.RegisterType<TabItemViewModel>()
-                .Keyed<ITabViewModel>(nameof(TabItemViewModel));
+            
+
+            builder.RegisterType<StopWatchTimerViewModel>().AsSelf();
+               
 
             return builder.Build();
         }

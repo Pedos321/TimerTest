@@ -4,21 +4,78 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TimerTestApp.View"
+             xmlns:timestateenum ="clr-namespace:TimerTestApp.Model"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="StoppedContent">
+                <StackPanel>
+                    <Button Content="Запустить"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="RunningContent">
+                <StackPanel  Orientation="Horizontal">
+                    <Button Content="Пауза"/>
+                    <Button Content="Сбросить"/>
+                </StackPanel>
+            </DataTemplate>
+            <DataTemplate x:Key="PausedContent">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Возобновить"/>
+                    <Button Content="Сбросить"/>
+                </StackPanel>
+            </DataTemplate>
+            <Style TargetType="Label">
+                <Setter Property="FontSize" Value="50"/>
+                <Setter Property="Foreground" Value="#0099dc"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Background" Value="#0099dc"/>
+                <Setter Property="FontSize" Value="50"/>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="Black"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="MyContentStyle" TargetType="ContentPresenter">
+                <Setter Property="ContentTemplate" Value="{StaticResource StoppedContent}"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding CurrentTimerState}" Value="{x:Static timestateenum:TimerStates.Running}">
+                        <Setter Property="ContentTemplate" Value="{StaticResource RunningContent}"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding CurrentTimerState}" Value="{x:Static timestateenum:TimerStates.Paused}">
+                        <Setter Property="ContentTemplate" Value="{StaticResource PausedContent}"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding CurrentTimerState}" Value="{x:Static timestateenum:TimerStates.Stopped}">
+                        <Setter Property="ContentTemplate" Value="{StaticResource StoppedContent}"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
+        <StackPanel x:Name="TimeContainer" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"  >
+            <Label x:Name="Hours" Margin="100,0,0,0">00</Label>
+            <Label>:</Label>
+            <Label x:Name="Minutes">00</Label>
+            <Label>:</Label>
+            <Label x:Name="Seconds" Margin="0,0,100,0">00</Label>
+        </StackPanel>
+        <StackPanel x:Name="ButtonsContainer" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2">
+            <ContentPresenter Style="{StaticResource MyContentStyle}" 
+                              Content="{Binding}"/>
+        </StackPanel>
     </Grid>
 </UserControl>

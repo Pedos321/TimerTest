@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TimerTestApp.ViewModel;
 
 namespace TimerTestApp.View
 {
@@ -20,9 +21,11 @@ namespace TimerTestApp.View
     /// </summary>
     public partial class CustomTimerView : UserControl
     {
+        
         public CustomTimerView()
         {
             InitializeComponent();
+            DataContext = new StopWatchTimerViewModel();
         }
     }
 }

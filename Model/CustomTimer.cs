@@ -9,16 +9,13 @@ namespace TimerTestApp.Model
 {
     public class CustomTimer
     {
-        
-        public enum TimerStates : byte {Stopped,Running,Paused };
-
-        protected int _Hour = 0;
-        protected int _Minute = 0;
-        protected int _Second = 0;
-        protected int _Interval = 1000;
-        protected int _TickCount = 0;
-        protected IPrimitiveTimer _Timer = null;
-        protected TimerStates _State = TimerStates.Stopped;
+        private int _Hour = 0;
+        private int _Minute = 0;
+        private int _Second = 0;
+        private int _Interval = 1000;
+        private int _TickCount = 0;
+        private IPrimitiveTimer _Timer = null;
+        private TimerStates _State = TimerStates.Stopped;
 
         
         #region Public properties
@@ -165,8 +162,10 @@ namespace TimerTestApp.Model
             Minute = minute;
             Second = second;
             Interval = interval;
-
+           
         }
         #endregion
     }
+
+    public enum TimerStates : int { Stopped, Running, Paused };
 }
