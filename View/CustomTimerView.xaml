@@ -11,53 +11,65 @@
         <ResourceDictionary>
             <DataTemplate x:Key="StoppedContent">
                 <StackPanel>
-                    <Button Content="Запустить"/>
+                    <Button Content="Запустить" Command="{Binding StartCommand}"/>
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="RunningContent">
                 <StackPanel  Orientation="Horizontal">
-                    <Button Content="Пауза"/>
-                    <Button Content="Сбросить"/>
+                    <Button Content="Пауза" Command="{Binding StopCommand}"/>
+                    <Button Content="Сбросить" Command="{Binding ResetCommand}"/>
                 </StackPanel>
             </DataTemplate>
             <DataTemplate x:Key="PausedContent">
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="Возобновить"/>
-                    <Button Content="Сбросить"/>
+                    <Button Content="Возобновить" Command="{Binding StartCommand}"/>
+                    <Button Content="Сбросить" Command="{Binding ResetCommand}"/>
                 </StackPanel>
             </DataTemplate>
+            <Style TargetType="UserControl">
+                <Setter Property="MinWidth" Value="200"/>
+                <Setter Property="MinHeight" Value="150"/>
+            </Style>
             <Style TargetType="Label">
                 <Setter Property="FontSize" Value="50"/>
                 <Setter Property="Foreground" Value="#0099dc"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="VerticalAlignment" Value="Center"/>
             </Style>
+            <Style x:Name="MyStackPanelStyle" TargetType="StackPanel">
+                <Setter Property="Orientation" Value="Horizontal"/>
+            </Style>
             <Style TargetType="Button">
                 <Setter Property="Background" Value="#0099dc"/>
                 <Setter Property="FontSize" Value="50"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="10,0,10,0"></Setter>
+                <Setter Property="Width" Value="300"/>
                 <Style.Triggers>
                     <Trigger Property="IsMouseOver" Value="True">
                         <Setter Property="Background" Value="Black"/>
+                        <Setter Property="Foreground" Value="White"/>
                     </Trigger>
                 </Style.Triggers>
             </Style>
             <Style x:Key="MyContentStyle" TargetType="ContentPresenter">
                 <Setter Property="ContentTemplate" Value="{StaticResource StoppedContent}"/>
                 <Style.Triggers>
-                    <DataTrigger Binding="{Binding CurrentTimerState}" Value="{x:Static timestateenum:TimerStates.Running}">
+                    <DataTrigger Binding="{Binding Path=StopWatchTimer.State, UpdateSourceTrigger=PropertyChanged}" Value="{x:Static timestateenum:TimerStates.Running}">
                         <Setter Property="ContentTemplate" Value="{StaticResource RunningContent}"/>
                     </DataTrigger>
-                    <DataTrigger Binding="{Binding CurrentTimerState}" Value="{x:Static timestateenum:TimerStates.Paused}">
+                    <DataTrigger Binding="{ Binding Path=StopWatchTimer.State, UpdateSourceTrigger=PropertyChanged}" Value="{x:Static timestateenum:TimerStates.Paused}">
                         <Setter Property="ContentTemplate" Value="{StaticResource PausedContent}"/>
                     </DataTrigger>
-                    <DataTrigger Binding="{Binding CurrentTimerState}" Value="{x:Static timestateenum:TimerStates.Stopped}">
+                    <DataTrigger Binding="{Binding Path=StopWatchTimer.State, UpdateSourceTrigger=PropertyChanged}" Value="{x:Static timestateenum:TimerStates.Stopped}">
                         <Setter Property="ContentTemplate" Value="{StaticResource StoppedContent}"/>
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid>
+    <Grid MinHeight="150" MinWidth="300">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
@@ -67,11 +79,11 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel x:Name="TimeContainer" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"  >
-            <Label x:Name="Hours" Margin="100,0,0,0">00</Label>
+            <Label x:Name="Hours" Margin="100,0,0,0" Content="{Binding Path=StopWatchTimer.Hour}"></Label>
             <Label>:</Label>
-            <Label x:Name="Minutes">00</Label>
+            <Label x:Name="Minutes" Content="{Binding Path=StopWatchTimer.Minute}" ></Label>
             <Label>:</Label>
-            <Label x:Name="Seconds" Margin="0,0,100,0">00</Label>
+            <Label x:Name="Seconds" Margin="0,0,100,0" Content="{Binding Path=StopWatchTimer.Second, UpdateSourceTrigger=PropertyChanged}"></Label>
         </StackPanel>
         <StackPanel x:Name="ButtonsContainer" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2">
             <ContentPresenter Style="{StaticResource MyContentStyle}" 

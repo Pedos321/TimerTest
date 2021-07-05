@@ -100,7 +100,6 @@
     <Compile Include="Startup\Bootstrapper.cs" />
     <Compile Include="TemplateSelector .cs" />
     <Compile Include="ViewModelBase.cs" />
-    <Compile Include="ViewModel\ITabViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\StopWatchTimerViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />

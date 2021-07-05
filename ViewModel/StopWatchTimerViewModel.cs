@@ -16,9 +16,9 @@ namespace TimerTestApp.ViewModel
 
         #region Fields
 
-        private CustomTimer StopWatchTimer = new CustomTimer(0, 0, 0, 1000);
+        private CustomTimer _StopWatchTimer;
 
-        private TimerStates _CurTimerState;
+      
 
         #endregion
 
@@ -31,31 +31,56 @@ namespace TimerTestApp.ViewModel
         public RelayCommand ResetCommand { get; private set; }
 
 
-        public TimerStates CurrentTimerState
-        {
-            get { return StopWatchTimer.State; }
-        }
 
+        public CustomTimer StopWatchTimer
+        {
+            get { return _StopWatchTimer; }
+            set { _StopWatchTimer = value; }
+        }
         #endregion
 
         #region Commands
         #endregion
 
         #region Methods
-        private void StartCommandExecute(object parameter)
-        { }
+        public  void StartCommandExecute(object parameter)
+        {
+            StopWatchTimer.Start();
+            OnPropertyChanged("StopWatchTimer");
+        }
 
-        private bool StartCommandCanExecute(object parameter)
+        public bool StartCommandCanExecute(object parameter)
         {
             return true;
         }
 
 
-        private void StopCommandExecute()
-        { }
+        public void StopCommandExecute(object parameter)
+        {
+            StopWatchTimer.Stop();
+            OnPropertyChanged("StopWatchTimer");
 
-        private void ResetCommandExecute()
-        { }
+        }
+
+        public bool StopCommandCanExecute(object parameter)
+        {
+            return true;
+        }
+
+        public void ResetCommandExecute(object parameter)
+        {
+            StopWatchTimer.Reset();
+            OnPropertyChanged("StopWatchTimer");
+        }
+
+        public bool ResetCommandCanExecute(object parameter)
+        {
+            if (StopWatchTimer.State != TimerStates.Running)
+            {
+                return true;
+            }
+            else return false;
+        }
         #endregion
 
         #region Events
@@ -67,7 +92,10 @@ namespace TimerTestApp.ViewModel
         #region Constructor
         public StopWatchTimerViewModel()
         {
+            StopWatchTimer = new CustomTimer(0, 0, 0, 1000);
             StartCommand = new RelayCommand(StartCommandExecute,StartCommandCanExecute);
+            StopCommand = new RelayCommand(StopCommandExecute, StopCommandCanExecute);
+            ResetCommand = new RelayCommand(ResetCommandExecute, ResetCommandCanExecute);
         }
         #endregion
 

@@ -115,7 +115,6 @@ C:\Users\Andrew\Desktop\TimerTestApp\obj\Debug\TimerTestApp.csproj.GenerateResou
 C:\Users\Andrew\Desktop\TimerTestApp\obj\Debug\TimerTestApp.csproj.CoreCompileInputs.cache
 C:\Users\Andrew\Desktop\TimerTestApp\obj\Debug\TimerTestApp.csproj.CopyComplete
 C:\Users\Andrew\Desktop\TimerTestApp\obj\Debug\TimerTestApp.csprojAssemblyReference.cache
-C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\TimerTestApp.csprojAssemblyReference.cache
 C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\View\TimerView.g.cs
 C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\App.g.cs
 C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -196,3 +195,6 @@ C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp.csproj.Cor
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp.csproj.CopyComplete
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp.exe
 C:\Users\Andrew\Desktop\TimerTestApp\TimerTest\obj\Debug\TimerTestApp.pdb
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\View\CustomTimerView.g.cs
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\View\CustomTimerView.baml
+C:\Users\Артем\Documents\GitHub\New Test\January\TimerTest\obj\Debug\TimerTestApp.csprojAssemblyReference.cache

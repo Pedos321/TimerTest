@@ -18,8 +18,6 @@ namespace TimerTestApp.Startup
 
             builder.RegisterType<MainViewModel>().AsSelf();
 
-            
-
             builder.RegisterType<StopWatchTimerViewModel>().AsSelf();
                
 

@@ -10,24 +10,21 @@
         xmlns:viewmodel="clr-namespace:TimerTestApp.ViewModel" 
         xmlns:i1="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
         mc:Ignorable="d"
-        Title="Тестовое задание" Height="450" Width="800">
+        Title="Тестовое задание" Height="450" Width="800" MinHeight="200" MinWidth="400">
 
     <Window.Resources>
         <ResourceDictionary>
             <DataTemplate x:Key="newTabButtonContentTemplate">
                 <Grid/>
             </DataTemplate>
-
             <DataTemplate x:Key="newTabButtonHeaderTemplate">
-              
+
                 <Button 
         Command="{Binding ElementName=root, Path=DataContext.CreateNewTabCommand}">Hello</Button>
             </DataTemplate>
-
             <DataTemplate x:Key="itemContentTemplate">
                 <view:TimerView/>
             </DataTemplate>
-
             <DataTemplate x:Key="itemHeaderTemplate">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="{Binding Title}" FontSize="20" />
@@ -39,12 +36,9 @@
             <local:TemplateSelector x:Key="headerTemplateSelector"
                            NewButtonTemplate="{StaticResource newTabButtonHeaderTemplate}"
                            ItemTemplate="{StaticResource itemHeaderTemplate}"/>
-
             <local:TemplateSelector x:Key="contentTemplateSelector"
                             NewButtonTemplate="{StaticResource newTabButtonContentTemplate}"
                             ItemTemplate="{StaticResource itemContentTemplate}"/>
-            
-            
         </ResourceDictionary>
     </Window.Resources>
     <Grid>

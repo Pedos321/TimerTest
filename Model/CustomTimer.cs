@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TimerTestApp.Model
 {
-    public class CustomTimer
+    public class CustomTimer : ViewModelBase
     {
         private int _Hour = 0;
         private int _Minute = 0;
@@ -16,7 +16,7 @@ namespace TimerTestApp.Model
         private int _TickCount = 0;
         private IPrimitiveTimer _Timer = null;
         private TimerStates _State = TimerStates.Stopped;
-
+        
         
         #region Public properties
 
@@ -29,7 +29,7 @@ namespace TimerTestApp.Model
         public int Hour
         {
             get { return _Hour; }
-            set { _Hour = value; }
+            set { _Hour = value;}
         }
 
         public int Minute
@@ -41,7 +41,9 @@ namespace TimerTestApp.Model
         public int Second
         {
             get { return _Second; }
-            set { _Second = value; }
+            set { _Second = value;
+                OnPropertyChanged();
+            }
         }
 
         public int Interval
@@ -68,6 +70,7 @@ namespace TimerTestApp.Model
                 _State = value;
                 var e = new EventArgs();
                 OnStateChanged(e);
+                OnPropertyChanged();
             }
         }
         #endregion
@@ -81,6 +84,11 @@ namespace TimerTestApp.Model
             _Timer.Interval = _Interval;
         }
 
+
+        private void UpdateTimerTimeProperty()
+        {
+            Second = _TickCount;
+        }
 
         private IPrimitiveTimer CreateTimer()
         {
@@ -138,6 +146,7 @@ namespace TimerTestApp.Model
         protected virtual void OnElapsed(EventArgs e)
         {
             TickCount++;
+            UpdateTimerTimeProperty();
         }
 
 
